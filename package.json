@@ -16,8 +16,10 @@
 
   "dependencies": {
     "hubot": "2.3.2",
-    "hubot-scripts": ">= 2.1.0",
-    "optparse": "1.0.3"
+    "hubot-scripts": "2.3.0",
+    "optparse": "1.0.3",
+		"date-utils": ">= 1.2.5",
+		"githubot": "0.2.0"
   },
 
   "engines": {
