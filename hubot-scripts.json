@@ -58,7 +58,6 @@
   "gifbin.coffee",
   "giftv.coffee",
   "git-help.coffee",
-  "github-commit-link.coffee",
   "github-commiters.coffee",
   "github-credentials.coffee",
   "github-issue-link.coffee",
