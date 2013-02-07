@@ -23,7 +23,7 @@ module.exports = (robot) ->
 
   robot.respond /sheridan/i, (msg) ->
     msg.http('http://sheridanfruit.com/deli.php').get() (err, res, body) ->
-      menuUrl = body.match(/['"](http:\/\/www.sheridanfruit.com\/Common\/Gallery\/Menu.*\.pdf)['"]/i)[1]
+      menuUrl = body.match(/['"](http:\/\/www.sheridanfruit.com\/Common\/Gallery\/Menu[0-9_-]+\.pdf)['"]/i)[1]
       if menuUrl
         downloadMenu(msg, menuUrl)
       else
@@ -41,7 +41,7 @@ module.exports = (robot) ->
     "#{base}/sheridan.jpg?#{+new Date()}"
 
   makeImage = (msg, pdfPath) ->
-    cmd = "convert -density 200 #{pdfPath} -scale 1000x1000 -gravity Center -crop 93x37%+10+250! #{jpgPath}"
+    cmd = "convert -density 200 #{pdfPath} -scale 1000x1000 -gravity Center -crop 93x38%+5+255! #{jpgPath}"
     cp.exec cmd, (err, stdout, stderr) ->
       if err
         msg.send "Error converting image: #{stderr}"
